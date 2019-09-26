@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
 	addMonths,
+	subMonths,
 	isSameDay,
 	isWithinRange,
 	isAfter,
@@ -66,9 +67,9 @@ const DateRangePickerImpl: React.FunctionComponent<DateRangePickerProps> = props
 	// console.log("rendering DateRangePicker");
 	const [dateRange, setDateRange] = React.useState<DateRange>({ ...initialDateRange });
 	const [hoverDay, setHoverDay] = React.useState<Date>();
-	const [firstMonth, setFirstMonth] = React.useState<Date>(intialFirstMonth || today);
+	const [firstMonth, setFirstMonth] = React.useState<Date>(intialFirstMonth || subMonths(today, 1));
 	const [secondMonth, setSecondMonth] = React.useState<Date>(
-		initialSecondMonth || addMonths(firstMonth, 1)
+		initialSecondMonth || today
 	);
 
 	const { startDate, endDate } = dateRange;

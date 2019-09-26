@@ -1,14 +1,14 @@
 {
-	"name": "@matharumanpreet00/react-daterange-picker",
-	"version": "1.0.5",
+	"name": "material-react-daterange-picker",
+	"version": "1.0.8",
 	"description": "A react date range picker using Material Design",
 	"author": {
-		"email": "matharumanpreet00@gmail.com",
-		"name": "Manpreet Singh Matharu"
+		"email": "rangelstoilov@gmail.com",
+		"name": "Rangel Stoilov"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/matharumanpreet00/react-daterange-picker"
+		"url": "https://github.com/rori4/react-daterange-picker"
 	},
 	"main": "build/index.js",
 	"scripts": {
