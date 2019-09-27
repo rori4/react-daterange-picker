@@ -1,7 +1,6 @@
 import * as React from "react";
 import {
 	addMonths,
-	subMonths,
 	isSameDay,
 	isWithinRange,
 	isAfter,
@@ -23,13 +22,12 @@ export const MARKERS: { [key: string]: Marker } = {
 	SECOND_MONTH: Symbol("secondMonth")
 };
 
-const getValidatedMonths = (range: DateRange, minDate: Date, maxDate: Date, trailingMonth: Boolean) => {
+const getValidatedMonths = (range: DateRange, minDate: Date, maxDate: Date) => {
 	let { startDate, endDate } = range;
 	if (startDate && endDate) {
 		const newStart = max(startDate, minDate);
 		const newEnd = min(endDate, maxDate);
-		const endDateAdgusted = trailingMonth && isSameMonth(newStart, newEnd) ? addMonths(newStart, 1) : newEnd
-		return [newStart, endDateAdgusted];
+		return [isSameMonth(newStart, newEnd) ? addMonths(newStart, 1) : newStart,  newEnd];
 	} else {
 		return [startDate, endDate];
 	}
@@ -64,7 +62,6 @@ const DateRangePickerImpl: React.FunctionComponent<DateRangePickerProps> = props
 		initialDateRange || {},
 		minDateValid,
 		maxDateValid,
-		!!trailingMonth,
 	);
 
 	// console.log("rendering DateRangePicker");
@@ -97,8 +94,8 @@ const DateRangePickerImpl: React.FunctionComponent<DateRangePickerProps> = props
 			range.endDate = newEnd = min(newEnd, maxDateValid);
 			setDateRange(range);
 			onChange(range);
-			setFirstMonth(newStart);
-			setSecondMonth(isSameMonth(newStart, newEnd) ? addMonths(newStart, 1) : newEnd);
+			setFirstMonth(isSameMonth(newStart, newEnd) ? addMonths(newStart, -1) : newStart);
+			setSecondMonth(newEnd);
 		}
 	};
 
