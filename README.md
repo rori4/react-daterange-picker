@@ -3,8 +3,8 @@ A react date range picker using material-ui components.
 
 FORK OF: https://github.com/matharumanpreet00/react-daterange-picker 
 
-<a href='https://www.npmjs.com/package/rori4/react-daterange-picker'>
-    <img src='https://img.shields.io/npm/v/rori4/react-daterange-picker.svg' alt='Latest npm version'>
+<a href='https://www.npmjs.com/package/material-react-daterange-picker'>
+    <img src='https://img.shields.io/npm/v/material-react-daterange-picker.svg' alt='Latest npm version'>
 </a>
 
 ## Live Demo: https://matharumanpreet00.github.io/react-daterange-picker/
