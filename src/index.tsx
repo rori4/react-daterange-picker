@@ -64,7 +64,7 @@ const DateRangePickerImpl: React.FunctionComponent<DateRangePickerProps> = props
 		initialDateRange || {},
 		minDateValid,
 		maxDateValid,
-		trailingMonth,
+		!!trailingMonth,
 	);
 
 	// console.log("rendering DateRangePicker");
